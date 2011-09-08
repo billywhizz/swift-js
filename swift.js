@@ -10,8 +10,8 @@ function BlockParser(options) {
 	var rx2I = /I(\d{3})([\w\d]{12})(\w{1})(\d{1})?(\d{3})?/;
 	var rx2O = /O(\d{3})(\d{4})(\d{6})([\d\w]{12})(\d{4})(\d{6})(\d{6})(\d{4})(\w)/;
 	var rxField = /:(\d\d)(\w)?:(.+)/;
-	var rxGenericField = new RegExp(":(\\w{0,4})?/(\\w{0,8})?/(.+)?");
-	var rxSubBlock = new RegExp("\\{([\\w\\d ]+):([\\w\\d ]+)\\}", "g");
+	var rxGenericField = /:(\w{0,4})?\/(\w{0,8})?\/(.+)?/;
+	var rxSubBlock = /\{([\w\d ]+):([\w\d ]+)\}/g;
 	this.onHeader = null;
 	this.onField = null;
 	this.Parse = function(mtype, body) {
