@@ -50,7 +50,7 @@ mp.onBlock = function(type, buffer) {
 	bp.Parse(type, buffer.toString("utf8"));
 }
 
-var b = require("fs").readFileSync(process.ARGV[2]);
+var b = require("fs").readFileSync(process.argv[2]);
 var len = b.length;
 var start = 0;
 var blocksize = 1000;

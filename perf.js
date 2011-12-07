@@ -30,8 +30,8 @@ mp.onBlock = function(type, buffer) {
 	bp.Parse(type, buffer.toString("utf8"));
 }
 
-var b = require("fs").readFileSync(process.ARGV[2]);
-var runs = parseInt(process.ARGV[3] || 1);
+var b = require("fs").readFileSync(process.argv[2]);
+var runs = parseInt(process.argv[3] || 1);
 var start = new Date().getTime();
 while(runs--) {
 	mp.Parse(b);
